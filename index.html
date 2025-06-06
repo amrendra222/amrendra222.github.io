@@ -4,58 +4,78 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Amrendra Pandey | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400|Roboto:400,500,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="container">
+  <header class="hero">
+    <div class="overlay"></div>
+    <div class="container hero-content">
       <img src="self.jpg" alt="Profile Photo" class="profile-img">
       <h1>Amrendra Pandey</h1>
-      <p class="title">[Your Professional Title]</p>
+      <p class="subtitle">Aspiring Software Developer</p>
       <div class="social-links">
-        <a href="https://github.com/amrendra222" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/amrendra-pandey-1a3378294/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/amrendra222" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/amrendra-pandey-1a3378294/" target="_blank"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
   </header>
   <main class="container">
-    <section>
+    <section class="card about">
       <h2>About Me</h2>
       <p>
-        [Brief introduction about yourself. Add a summary of your background, expertise, and career interests.]
+        Passionate about technology and programming, I have experience in C, Python, Java, MySQL, and DBMS. With a solid foundation in coding and database management, I enjoy developing efficient solutions and continuously expanding my skill set. I'm eager to contribute my knowledge to innovative projects and collaborate with professionals in the tech industry.
+        <br><br>
+        Always eager to learn and adapt to new technologies, I am committed to continuously improving my skills and contributing to impactful projects.
       </p>
     </section>
-    <section>
-      <h2>Experience</h2>
+    <section class="grid-2">
+      <div class="card exp">
+        <h2><i class="fas fa-briefcase"></i> Experience</h2>
+        <ul>
+          <li>
+            <strong>Aspiring Software Developer</strong><br>
+            Sri Krishna Institute Of Technology, Bangalore<br>
+            <span class="date">2023 – 2027</span>
+          </li>
+        </ul>
+      </div>
+      <div class="card edu">
+        <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+        <ul>
+          <li>
+            <strong>BE</strong><br>
+            Sri Krishna Institute Of Technology, Bangalore<br>
+            <span class="date">2nd Year</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="card skills">
+      <h2><i class="fas fa-code"></i> Skills</h2>
       <ul>
-        <li>
-          <strong>[Aspiring Software Developer]</strong> — [Sri Krishna Institute Of Technology, Bangalore]<br>
-          <span class="date">[2023] – [2027]</span><br>
-          <span class="desc">[Passionate about technology and programming, I have experience in C, Python, Java, MySQL, and DBMS. With a solid foundation in coding and database management, I enjoy developing efficient solutions and continuously expanding my skill set. I'm eager to contribute my knowledge to innovative projects and collaborate with professionals in the tech industry.
- Always eager to learn and adapt to new technologies, I am committed to continuously improving my skills and contributing to impactful projects.]</span>
-        </li>
-        <!-- Add more experiences as needed -->
+        <li>Cloud Computing</li>
+        <li>Python</li>
+        <li>Java</li>
+        <li>C</li>
+        <li>MySQL</li>
+        <li>DBMS</li>
       </ul>
     </section>
-    <section>
-      <h2>Education</h2>
-      <ul>
-        <li>
-          <strong>[BE]</strong> — [Sri Krishna Institute Of Technology, Bangalore]<br>
-          <span class="date">[2nd]</span>
-        </li>
-        <!-- Add more education items as needed -->
-      </ul>
-    </section>
-    <section>
-      <h2>Skills</h2>
-      <ul class="skills">
-        <li>[Cloud Computing]</li>
-        <li>[Python]</li>
-        <li>[JAVA]</li>
-        <!-- Add more skills as needed -->
-      </ul>
+    <section class="card projects">
+      <h2><i class="fas fa-folder-open"></i> Projects</h2>
+      <div class="project-list">
+        <div class="project-item">
+          <h3>Portfolio Website</h3>
+          <p>A modern web portfolio to showcase my skills and experiences. Built with HTML, CSS, and a touch of JavaScript.</p>
+        </div>
+        <div class="project-item">
+          <h3>Student Database System</h3>
+          <p>An academic project for managing student data using Python and MySQL.</p>
+        </div>
+        <!-- Add more projects as you build them! -->
+      </div>
     </section>
   </main>
   <footer>
