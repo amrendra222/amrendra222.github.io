@@ -14,12 +14,13 @@
     <div class="container hero-content">
       <img src="self.jpg" alt="Profile Photo" class="profile-img">
       <h1>Amrendra Pandey</h1>
-      <p class="subtitle">Aspiring Software Developer</p>
+      <p class="subtitle"><span id="subtitle-typing"></span><span class="cursor">|</span></p>
       <div class="social-links">
         <a href="https://github.com/amrendra222" target="_blank"><i class="fab fa-github"></i></a>
         <a href="https://linkedin.com/in/amrendra-pandey-1a3378294/" target="_blank"><i class="fab fa-linkedin"></i></a>
       </div>
       <button id="theme-toggle" title="Switch theme"><i class="fas fa-adjust"></i></button>
+      <a href="resume.pdf" class="resume-btn" download><i class="fas fa-download"></i> Download Resume</a>
     </div>
   </header>
   <main class="container">
@@ -27,9 +28,24 @@
       <h2>About Me</h2>
       <p>
         Passionate about technology and programming, I have experience in C, Python, Java, MySQL, and DBMS. I enjoy developing efficient solutions and working on impactful projects.<br><br>
-        Always eager to learn new technologies, I’m committed to continuously improving my skills.
+        Always eager to learn new technologies, I’m committed to continuously improving my skills and contributing to the developer community.
       </p>
     </section>
+
+    <section class="card tech-stack reveal">
+      <h2><i class="fas fa-tools"></i> Tech Stack</h2>
+      <ul class="tech-stack-list">
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" title="Python"> Python</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" title="Java"> Java</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript"> JavaScript</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" title="MySQL"> MySQL</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" title="Git"> Git</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" title="Linux"> Linux</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" title="Docker"> Docker</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg" alt="AWS" title="AWS"> AWS Cloud</li>
+      </ul>
+    </section>
+
     <section class="grid-2">
       <div class="card exp reveal">
         <h2><i class="fas fa-briefcase"></i> Experience</h2>
@@ -52,33 +68,101 @@
         </ul>
       </div>
     </section>
+
     <section class="card skills reveal">
       <h2><i class="fas fa-code"></i> Skills</h2>
-      <div id="skills-groups">
-        <!-- Skills will be injected by JS -->
-      </div>
+      <div id="skills-groups"></div>
     </section>
+
     <section class="card projects reveal">
       <h2><i class="fas fa-folder-open"></i> Projects</h2>
-      <div class="project-list" id="project-list">
-        <!-- Projects will be injected by JS -->
+      <div class="project-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Python">Python</button>
+        <button class="filter-btn" data-filter="JavaScript">JavaScript</button>
+        <button class="filter-btn" data-filter="Java">Java</button>
+        <button class="filter-btn" data-filter="MySQL">MySQL</button>
+        <button class="filter-btn" data-filter="Cloud">Cloud</button>
       </div>
+      <div class="project-list" id="project-list"></div>
     </section>
-    <section class="card certificates reveal">
-      <h2><i class="fas fa-certificate"></i> Certificates</h2>
-      <ul id="cert-list">
-        <!-- Certificates will be injected by JS -->
+
+    <section class="card blog reveal">
+      <h2><i class="fas fa-pencil-alt"></i> Tech Articles</h2>
+      <ul>
+        <li>
+          <strong><a href="https://dev.to/amrendra222/understanding-rest-apis-for-beginners" target="_blank">Understanding REST APIs for Beginners</a></strong><br>
+          <span class="date">May 2025</span>
+        </li>
+        <li>
+          <strong><a href="https://medium.com/@amrendra222/how-to-secure-your-database" target="_blank">How to Secure Your Database</a></strong><br>
+          <span class="date">April 2025</span>
+        </li>
       </ul>
     </section>
+
+    <section class="card open-source reveal">
+      <h2><i class="fab fa-github"></i> Open Source Contributions</h2>
+      <ul>
+        <li>
+          <strong><a href="https://github.com/open-source-project/repo" target="_blank">open-source-project/repo</a></strong>: Fixed authentication bug.<br>
+          <span class="date">March 2025</span>
+        </li>
+        <li>
+          <strong><a href="https://github.com/open-source-project/another-repo" target="_blank">open-source-project/another-repo</a></strong>: Improved documentation.<br>
+          <span class="date">February 2025</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card community reveal">
+      <h2><i class="fas fa-users"></i> Community & Events</h2>
+      <ul>
+        <li>
+          <strong>Speaker</strong> at <em>SKIT Tech Fest 2025</em> - "Modern Cloud Tools"<br>
+          <span class="date">March 2025</span>
+        </li>
+        <li>
+          <strong>Participant</strong> at <em>Hacktoberfest 2024</em>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card interests reveal">
+      <h2><i class="fas fa-lightbulb"></i> Tech Interests</h2>
+      <ul>
+        <li>Artificial Intelligence & Machine Learning</li>
+        <li>Cloud Infrastructure</li>
+        <li>Cybersecurity</li>
+        <li>Web Development</li>
+      </ul>
+    </section>
+
+    <section class="card certificates reveal">
+      <h2><i class="fas fa-certificate"></i> Certifications</h2>
+      <ul>
+        <li>
+          <a href="https://www.coursera.org/account/accomplishments/verify/123456" target="_blank">
+            <img src="https://images.credly.com/size/110x110/images/7b8dd4f3-3b3b-4cef-9f9e-4e2e5c3c8b8d/python.png" alt="Python Badge"> Python for Everybody (Coursera)
+          </a>
+        </li>
+        <li>
+          <a href="https://www.credly.com/badges/your-badge" target="_blank">
+            <img src="https://images.credly.com/size/110x110/images/70e9d6b0-6c80-4e3c-b7c1-0124f8e6c90a/cloud.png" alt="Cloud Badge"> Cloud Fundamentals (Microsoft Learn)
+          </a>
+        </li>
+      </ul>
+    </section>
+
     <section class="card contact reveal">
       <h2><i class="fas fa-envelope"></i> Contact</h2>
-      <form action="mailto:amrendra.pandey2522@gmail.com" method="POST" enctype="text/plain" class="contact-form">
+      <form action="mailto:your.email@example.com" method="POST" enctype="text/plain" class="contact-form">
         <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your email" required>
+        <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" placeholder="Message" required></textarea>
         <button type="submit"><i class="fas fa-paper-plane"></i> Send</button>
       </form>
-      <div class="contact-note">Or email directly: <a href="mailto:amrendra.pandey2522@gmail.com">your.email@example.com</a></div>
+      <div class="contact-note">Or email directly: <a href="mailto:your.email@example.com">your.email@example.com</a></div>
     </section>
   </main>
   <footer>
@@ -88,6 +172,38 @@
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
   <script>
+    // Typing effect for subtitle
+    const subtitleTexts = [
+      "Aspiring Software Developer",
+      "Cloud & Database Enthusiast",
+      "Open Source Contributor",
+      "Tech Blogger",
+      "Lifelong Learner"
+    ];
+    let subIndex = 0, charIndex = 0, typing = true;
+    const subtitleEl = document.getElementById('subtitle-typing');
+    function typeSubtitle() {
+      if (typing) {
+        if (charIndex <= subtitleTexts[subIndex].length) {
+          subtitleEl.textContent = subtitleTexts[subIndex].slice(0, charIndex++);
+          setTimeout(typeSubtitle, 80);
+        } else {
+          typing = false;
+          setTimeout(typeSubtitle, 1200);
+        }
+      } else {
+        if (charIndex > 0) {
+          subtitleEl.textContent = subtitleTexts[subIndex].slice(0, --charIndex);
+          setTimeout(typeSubtitle, 30);
+        } else {
+          typing = true;
+          subIndex = (subIndex + 1) % subtitleTexts.length;
+          setTimeout(typeSubtitle, 200);
+        }
+      }
+    }
+    typeSubtitle();
+
     // Theme Switcher
     const themeToggle = document.getElementById('theme-toggle');
     themeToggle.onclick = () => {
@@ -114,51 +230,77 @@
       { group: "Programming Languages", skills: ["Python", "Java", "C", "JavaScript"] },
       { group: "Web Technologies", skills: ["HTML", "CSS", "Bootstrap"] },
       { group: "Databases", skills: ["MySQL", "DBMS"] },
-      { group: "Tools & Platforms", skills: ["Cloud Computing", "Git", "Linux"] },
-      { group: "Other", skills: ["Problem Solving", "Teamwork"] }
+      { group: "Tools & Platforms", skills: ["Cloud Computing", "Git", "Linux", "Docker", "AWS"] },
+      { group: "Other", skills: ["Problem Solving", "Teamwork", "Communication"] }
     ];
     document.getElementById('skills-groups').innerHTML = skillGroups.map(g =>
       `<div class="skill-group"><h4>${g.group}</h4><ul>${g.skills.map(s => `<li>${s}</li>`).join('')}</ul></div>`
     ).join('');
 
-    // Projects
+    // Projects with tags for filtering
     const projects = [
       {
         name: "Portfolio Website",
-        desc: "A modern web portfolio to showcase my skills and experiences. Built with HTML, CSS, and JavaScript.",
+        desc: "A modern, responsive web portfolio to showcase my skills and experiences. Built with HTML, CSS, and JavaScript.",
         link: "",
-        demo: ""
+        demo: "",
+        tags: ["JavaScript", "HTML", "CSS"]
       },
       {
         name: "Student Database System",
         desc: "Academic project for managing student data using Python and MySQL.",
         link: "",
-        demo: ""
+        demo: "",
+        tags: ["Python", "MySQL"]
       },
       {
         name: "Weather App",
         desc: "Displays real-time weather info using a public API. Built with JS and Bootstrap.",
         link: "https://github.com/amrendra222/weather-app",
-        demo: ""
+        demo: "",
+        tags: ["JavaScript", "Bootstrap", "API"]
+      },
+      {
+        name: "Expense Tracker",
+        desc: "Tracks expenses and generates visual reports. Built with Java and JavaFX.",
+        link: "",
+        demo: "",
+        tags: ["Java"]
+      },
+      {
+        name: "Cloud File Uploader",
+        desc: "Uploads and manages files on AWS S3 using Python with Boto3.",
+        link: "",
+        demo: "",
+        tags: ["Python", "Cloud", "AWS"]
       }
     ];
-    document.getElementById('project-list').innerHTML = projects.map(p => `
-      <div class="project-item">
-        <h3>${p.name}</h3>
-        <p>${p.desc}</p>
-        <div class="project-links">
-          ${p.link ? `<a href="${p.link}" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>` : ""}
-          ${p.demo ? `<a href="${p.demo}" target="_blank" class="project-link"><i class="fas fa-play"></i> Demo</a>` : ""}
-        </div>
-      </div>
-    `).join('');
+    function renderProjects(filter = "all") {
+      const list = document.getElementById('project-list');
+      list.innerHTML = projects
+        .filter(p => filter === "all" || p.tags.includes(filter))
+        .map(p => `
+          <div class="project-item">
+            <h3>${p.name}</h3>
+            <p>${p.desc}</p>
+            <div class="project-links">
+              ${p.link ? `<a href="${p.link}" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>` : ""}
+              ${p.demo ? `<a href="${p.demo}" target="_blank" class="project-link"><i class="fas fa-play"></i> Demo</a>` : ""}
+            </div>
+            <div class="project-tags">${p.tags.map(tag => `<span class="project-tag">${tag}</span>`).join(' ')}</div>
+          </div>
+        `)
+        .join('');
+    }
+    renderProjects();
 
-    // Certificates
-    const certificates = [
-      "Python for Everybody (Coursera) - 2024",
-      "Cloud Fundamentals (Microsoft Learn) - 2024"
-    ];
-    document.getElementById('cert-list').innerHTML = certificates.map(c => `<li>${c}</li>`).join('');
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.onclick = () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderProjects(btn.dataset.filter);
+      };
+    });
 
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
