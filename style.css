@@ -220,3 +220,90 @@ footer {
     gap: 1rem;
   }
 }
+:root {
+  --primary: #2d4263;
+  --secondary: #c84b31;
+  --light: #f4f6fb;
+  --text: #222;
+  --card-bg: #fff;
+  --shadow: 0 8px 24px rgba(44, 62, 80, 0.13);
+  --transition: background 0.3s, color 0.3s;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--light);
+  color: var(--text);
+  font-family: 'Roboto', sans-serif;
+  transition: var(--transition);
+}
+body.dark-theme {
+  --primary: #1a2740;
+  --secondary: #e76f51;
+  --light: #1b1b2f;
+  --text: #f4f6fb;
+  --card-bg: #22223b;
+  --shadow: 0 8px 24px rgba(44, 62, 80, 0.24);
+  background: var(--light);
+  color: var(--text);
+}
+#theme-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5em;
+  margin-left: 1em;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+body.dark-theme #theme-toggle {
+  color: var(--secondary);
+}
+.hero {
+  position: relative;
+  background: linear-gradient(120deg, var(--primary) 70%, var(--secondary) 100%);
+  color: #fff;
+  padding: 4rem 0 2rem 0;
+  text-align: center;
+  overflow: hidden;
+  transition: var(--transition);
+}
+/* ...rest of your CSS unchanged... */
+
+.skills li, .project-link {
+  background: var(--secondary);
+  color: #fff;
+  border-radius: 18px;
+  padding: 0.5rem 1.1rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  box-shadow: 0 2px 10px rgba(44,62,80,0.13), 0 1.5px 4px #c84b31;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.15s;
+  display: inline-block;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+}
+.skills li:hover, .project-link:hover {
+  background: var(--primary);
+  transform: translateY(-3px) scale(1.04);
+}
+body.dark-theme .skills li, body.dark-theme .project-link {
+  background: var(--secondary);
+  color: #fff;
+}
+body.dark-theme .card {
+  background: #21213a;
+  color: #f4f6fb;
+}
+.card {
+  background: var(--card-bg);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 2rem 2rem 1.5rem 2rem;
+  margin-bottom: 2rem;
+  transition: var(--transition), transform 0.25s cubic-bezier(.25,.46,.45,.94), box-shadow 0.25s;
+  will-change: transform;
+}
+/* Add the rest of your previous CSS here, unchanged, for layout and responsiveness */
