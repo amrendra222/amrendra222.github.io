@@ -16,16 +16,18 @@ html, body {
   font-family: 'Roboto', sans-serif;
   transition: var(--transition);
 }
+
 body.dark-theme {
-  --primary: #1a2740;
-  --secondary: #e76f51;
-  --light: #1b1b2f;
-  --text: #f4f6fb;
-  --card-bg: #22223b;
-  --shadow: 0 8px 24px rgba(44, 62, 80, 0.24);
+  --primary: #2d4263;
+  --secondary: #c84b31;
+  --light: #f4f6fb;
+  --text: #222;
+  --card-bg: #fff;
+  --shadow: 0 8px 24px rgba(44, 62, 80, 0.13);
   background: var(--light);
   color: var(--text);
 }
+
 #theme-toggle {
   background: none;
   border: none;
@@ -194,8 +196,8 @@ body.dark-theme .skills li, body.dark-theme .project-link {
   color: #fff;
 }
 body.dark-theme .card {
-  background: #21213a;
-  color: #f4f6fb;
+  background: #fff;
+  color: #222;
 }
 .skill-group h4 {
   margin: 0.3em 0 0.2em 0;
@@ -249,8 +251,8 @@ body.dark-theme .skill-group h4 {
   color: #fff;
 }
 body.dark-theme .filter-btn {
-  background: #232340;
-  color: var(--secondary);
+  background: #e7e8ee;
+  color: var(--primary);
 }
 body.dark-theme .filter-btn.active, body.dark-theme .filter-btn:hover {
   background: var(--secondary);
@@ -273,7 +275,7 @@ body.dark-theme .filter-btn.active, body.dark-theme .filter-btn:hover {
   will-change: transform;
 }
 body.dark-theme .projects .project-item {
-  background: #232340;
+  background: #f7f7fa;
 }
 .projects .project-item:hover {
   box-shadow: 0 8px 28px rgba(200,75,49,0.11);
@@ -299,8 +301,8 @@ body.dark-theme .projects .project-item {
   display: inline-block;
 }
 body.dark-theme .project-tag {
-  background: #232340;
-  color: var(--secondary);
+  background: #e7e8ee;
+  color: #444;
 }
 h2 {
   color: var(--primary);
@@ -312,7 +314,7 @@ h2 {
   gap: 0.5em;
 }
 body.dark-theme h2 {
-  color: var(--secondary);
+  color: var(--primary);
 }
 ul {
   list-style: none;
@@ -345,7 +347,7 @@ li {
   font-size: 1em;
 }
 body.dark-theme .certificates li {
-  background: #232340;
+  background: #f4f6fb;
 }
 .certificates img {
   width: 2em;
@@ -373,9 +375,9 @@ body.dark-theme .certificates li {
   outline: none;
 }
 body.dark-theme .contact-form input, body.dark-theme .contact-form textarea {
-  background: #232340;
-  color: #f4f6fb;
-  border: 1px solid #3e3e50;
+  background: #f9f9fb;
+  color: #222;
+  border: 1px solid #d2d2da;
 }
 .contact-form button {
   background: var(--primary);
@@ -406,9 +408,9 @@ footer {
   border-radius: 0 0 14px 14px;
 }
 body.dark-theme footer {
-  background: #1a1a2a;
-  color: #bbb;
-  border-top: 1px solid #22223b;
+  background: #eaeff7;
+  color: #666;
+  border-top: 1px solid #e0e4ec;
 }
 @media (max-width: 900px) {
   .container {
