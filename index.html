@@ -19,15 +19,15 @@
         <a href="https://github.com/amrendra222" target="_blank"><i class="fab fa-github"></i></a>
         <a href="https://linkedin.com/in/amrendra-pandey-1a3378294/" target="_blank"><i class="fab fa-linkedin"></i></a>
       </div>
+      <button id="theme-toggle" title="Switch theme"><i class="fas fa-adjust"></i></button>
     </div>
   </header>
   <main class="container">
     <section class="card about">
       <h2>About Me</h2>
       <p>
-        Passionate about technology and programming, I have experience in C, Python, Java, MySQL, and DBMS. With a solid foundation in coding and database management, I enjoy developing efficient solutions and continuously expanding my skill set. I'm eager to contribute my knowledge to innovative projects and collaborate with professionals in the tech industry.
-        <br><br>
-        Always eager to learn and adapt to new technologies, I am committed to continuously improving my skills and contributing to impactful projects.
+        Passionate about technology and programming, I have experience in C, Python, Java, MySQL, and DBMS. I enjoy developing efficient solutions and working on impactful projects.<br><br>
+        Always eager to learn new technologies, I’m committed to continuously improving my skills.
       </p>
     </section>
     <section class="grid-2">
@@ -54,28 +54,27 @@
     </section>
     <section class="card skills">
       <h2><i class="fas fa-code"></i> Skills</h2>
-      <ul>
-        <li>Cloud Computing</li>
-        <li>Python</li>
-        <li>Java</li>
-        <li>C</li>
-        <li>MySQL</li>
-        <li>DBMS</li>
+      <ul id="skills-list">
+        <!-- Skills will be injected by JS -->
       </ul>
     </section>
     <section class="card projects">
       <h2><i class="fas fa-folder-open"></i> Projects</h2>
-      <div class="project-list">
-        <div class="project-item">
-          <h3>Portfolio Website</h3>
-          <p>A modern web portfolio to showcase my skills and experiences. Built with HTML, CSS, and a touch of JavaScript.</p>
-        </div>
-        <div class="project-item">
-          <h3>Student Database System</h3>
-          <p>An academic project for managing student data using Python and MySQL.</p>
-        </div>
-        <!-- Add more projects as you build them! -->
+      <div class="project-list" id="project-list">
+        <!-- Projects will be injected by JS -->
       </div>
+    </section>
+    <section class="card certificates">
+      <h2><i class="fas fa-certificate"></i> Certificates</h2>
+      <ul>
+        <li>Python for Everybody (Coursera) - 2024</li>
+        <li>Cloud Fundamentals (Microsoft Learn) - 2024</li>
+        <!-- Add more certificates -->
+      </ul>
+    </section>
+    <section class="card contact">
+      <h2><i class="fas fa-envelope"></i> Contact</h2>
+      <p>Feel free to reach out via <a href="mailto:your.email@example.com">email</a>!</p>
     </section>
   </main>
   <footer>
@@ -83,14 +82,51 @@
       &copy; 2025 Amrendra Pandey
     </div>
   </footer>
-  <!-- 3D Card Effect JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
   <script>
+    // Theme Switcher
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.onclick = () => {
+      document.body.classList.toggle('dark-theme');
+      localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+    };
+    if(localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-theme');
+
+    // Skills Array for Dynamic Listing
+    const skills = [
+      "Cloud Computing", "Python", "Java", "C", "MySQL", "DBMS", "HTML", "CSS", "JavaScript", "Git", "Linux", "Problem Solving"
+    ];
+    document.getElementById('skills-list').innerHTML = skills.map(s => `<li>${s}</li>`).join('');
+
+    // Projects Array for Dynamic Listing
+    const projects = [
+      {
+        name: "Portfolio Website",
+        desc: "A modern web portfolio to showcase my skills and experiences. Built with HTML, CSS, and a touch of JavaScript.",
+        link: ""
+      },
+      {
+        name: "Student Database System",
+        desc: "An academic project for managing student data using Python and MySQL.",
+        link: ""
+      },
+      {
+        name: "Weather App",
+        desc: "Displays real-time weather info using a public API. Built with JS and Bootstrap.",
+        link: "https://github.com/amrendra222/weather-app"
+      }
+    ];
+    document.getElementById('project-list').innerHTML = projects.map(p => `
+      <div class="project-item">
+        <h3>${p.name}</h3>
+        <p>${p.desc}</p>
+        ${p.link ? `<a href="${p.link}" target="_blank" class="project-link">View Project</a>` : ""}
+      </div>
+    `).join('');
+
+    // Tilt effect
     VanillaTilt.init(document.querySelectorAll(".card, .profile-img"), {
-      max: 15,
-      speed: 400,
-      glare: true,
-      "max-glare": 0.18,
+      max: 15, speed: 400, glare: true, "max-glare": 0.18,
     });
   </script>
 </body>
