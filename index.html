@@ -23,7 +23,7 @@
     </div>
   </header>
   <main class="container">
-    <section class="card about">
+    <section class="card about reveal">
       <h2>About Me</h2>
       <p>
         Passionate about technology and programming, I have experience in C, Python, Java, MySQL, and DBMS. I enjoy developing efficient solutions and working on impactful projects.<br><br>
@@ -31,7 +31,7 @@
       </p>
     </section>
     <section class="grid-2">
-      <div class="card exp">
+      <div class="card exp reveal">
         <h2><i class="fas fa-briefcase"></i> Experience</h2>
         <ul>
           <li>
@@ -41,7 +41,7 @@
           </li>
         </ul>
       </div>
-      <div class="card edu">
+      <div class="card edu reveal">
         <h2><i class="fas fa-graduation-cap"></i> Education</h2>
         <ul>
           <li>
@@ -52,34 +52,38 @@
         </ul>
       </div>
     </section>
-    <section class="card skills">
+    <section class="card skills reveal">
       <h2><i class="fas fa-code"></i> Skills</h2>
-      <ul id="skills-list">
+      <div id="skills-groups">
         <!-- Skills will be injected by JS -->
-      </ul>
+      </div>
     </section>
-    <section class="card projects">
+    <section class="card projects reveal">
       <h2><i class="fas fa-folder-open"></i> Projects</h2>
       <div class="project-list" id="project-list">
         <!-- Projects will be injected by JS -->
       </div>
     </section>
-    <section class="card certificates">
+    <section class="card certificates reveal">
       <h2><i class="fas fa-certificate"></i> Certificates</h2>
-      <ul>
-        <li>Python for Everybody (Coursera) - 2024</li>
-        <li>Cloud Fundamentals (Microsoft Learn) - 2024</li>
-        <!-- Add more certificates -->
+      <ul id="cert-list">
+        <!-- Certificates will be injected by JS -->
       </ul>
     </section>
-    <section class="card contact">
+    <section class="card contact reveal">
       <h2><i class="fas fa-envelope"></i> Contact</h2>
-      <p>Feel free to reach out via <a href="mailto:your.email@example.com">email</a>!</p>
+      <form action="mailto:your.email@example.com" method="POST" enctype="text/plain" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Message" required></textarea>
+        <button type="submit"><i class="fas fa-paper-plane"></i> Send</button>
+      </form>
+      <div class="contact-note">Or email directly: <a href="mailto:your.email@example.com">your.email@example.com</a></div>
     </section>
   </main>
   <footer>
     <div class="container">
-      &copy; 2025 Amrendra Pandey
+      &copy; <span id="year"></span> Amrendra Pandey
     </div>
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
@@ -92,39 +96,74 @@
     };
     if(localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-theme');
 
-    // Skills Array for Dynamic Listing
-    const skills = [
-      "Cloud Computing", "Python", "Java", "C", "MySQL", "DBMS", "HTML", "CSS", "JavaScript", "Git", "Linux", "Problem Solving"
-    ];
-    document.getElementById('skills-list').innerHTML = skills.map(s => `<li>${s}</li>`).join('');
+    // Animated reveal on scroll
+    function reveal() {
+      const reveals = document.querySelectorAll('.reveal');
+      for (const el of reveals) {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 70) el.classList.add('active');
+        else el.classList.remove('active');
+      }
+    }
+    window.addEventListener('scroll', reveal);
+    reveal();
 
-    // Projects Array for Dynamic Listing
+    // Skill groups
+    const skillGroups = [
+      { group: "Programming Languages", skills: ["Python", "Java", "C", "JavaScript"] },
+      { group: "Web Technologies", skills: ["HTML", "CSS", "Bootstrap"] },
+      { group: "Databases", skills: ["MySQL", "DBMS"] },
+      { group: "Tools & Platforms", skills: ["Cloud Computing", "Git", "Linux"] },
+      { group: "Other", skills: ["Problem Solving", "Teamwork"] }
+    ];
+    document.getElementById('skills-groups').innerHTML = skillGroups.map(g =>
+      `<div class="skill-group"><h4>${g.group}</h4><ul>${g.skills.map(s => `<li>${s}</li>`).join('')}</ul></div>`
+    ).join('');
+
+    // Projects
     const projects = [
       {
         name: "Portfolio Website",
-        desc: "A modern web portfolio to showcase my skills and experiences. Built with HTML, CSS, and a touch of JavaScript.",
-        link: ""
+        desc: "A modern web portfolio to showcase my skills and experiences. Built with HTML, CSS, and JavaScript.",
+        link: "",
+        demo: ""
       },
       {
         name: "Student Database System",
-        desc: "An academic project for managing student data using Python and MySQL.",
-        link: ""
+        desc: "Academic project for managing student data using Python and MySQL.",
+        link: "",
+        demo: ""
       },
       {
         name: "Weather App",
         desc: "Displays real-time weather info using a public API. Built with JS and Bootstrap.",
-        link: "https://github.com/amrendra222/weather-app"
+        link: "https://github.com/amrendra222/weather-app",
+        demo: ""
       }
     ];
     document.getElementById('project-list').innerHTML = projects.map(p => `
       <div class="project-item">
         <h3>${p.name}</h3>
         <p>${p.desc}</p>
-        ${p.link ? `<a href="${p.link}" target="_blank" class="project-link">View Project</a>` : ""}
+        <div class="project-links">
+          ${p.link ? `<a href="${p.link}" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>` : ""}
+          ${p.demo ? `<a href="${p.demo}" target="_blank" class="project-link"><i class="fas fa-play"></i> Demo</a>` : ""}
+        </div>
       </div>
     `).join('');
 
-    // Tilt effect
+    // Certificates
+    const certificates = [
+      "Python for Everybody (Coursera) - 2024",
+      "Cloud Fundamentals (Microsoft Learn) - 2024"
+    ];
+    document.getElementById('cert-list').innerHTML = certificates.map(c => `<li>${c}</li>`).join('');
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Card tilt effect
     VanillaTilt.init(document.querySelectorAll(".card, .profile-img"), {
       max: 15, speed: 400, glare: true, "max-glare": 0.18,
     });
